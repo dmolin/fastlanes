@@ -1,0 +1,152 @@
+@import 'vars';
+
+html, body, * {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: @secondaryFont, sans-serif !important;
+  font-weight: 300;
+  font-size: 1em;
+  line-height:1.2em;
+}
+
+.navigation,
+.title,
+.section-title,
+h1,h2,h3,h4,h5 {
+  font-family: @primaryFont, sans-serif !important;
+  font-weight:normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: .6em 0;
+}
+
+@media (min-width: @v-large) {
+  html, body {
+    font-size: 1.2em;
+    line-height:1.4em;
+  }
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+}
+
+.link {
+  color: @blue;
+  text-decoration: underline;
+}
+
+/* common resets */
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: @base-color;
+}
+
+a, a:visited {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.structural {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+@media (min-width: @v-large) {
+  .container {
+    max-width:1270px;
+  }
+}
+
+.shaded {
+  background-color: @bgLight;
+}
+
+.section-title {
+  display: inline-block;
+  //font-size: 24px;
+  margin-bottom: 1em;
+}
+.section-title::before {
+  display: inline-block;
+  content: '';
+  background: url(/images/macbook.svg) center center;
+  width: 45px;
+  height: 26px;
+  margin-right: 5px;
+}
+
+.section {
+  padding: 2em 0;
+}
+.section-header {
+  text-align:center;
+}
+
+.spinner {
+  text-align: center;
+}
+
+.cameo {
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.padded-sm {
+  padding: 0.5em;
+}
+
+.padded {
+  padding: 1em;
+}
+
+.padded-lg {
+  padding: 2em;
+}
+
+.copyright {
+  text-align: center;
+}
