@@ -5,6 +5,13 @@ This project holds the codebase for the upcoming "Fastlane" Kanban Manager proje
 
 This aim is to build a better "Trello", with more features and with a better pricing model.
 
+Some of the features:
+- Realtime Multiuser Kanban boards
+- Card dependencies ('waiting on', 'linked to' states for a card)
+- Card ID
+- Sprints and Milestones
+- Lane "snapshot" (useful to archive deployments and generate deployment reports)
+- Gamification (powerups, badges, user stats, leveling up, etc)
 
 ### Technologies Used ###
 
