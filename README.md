@@ -1,7 +1,7 @@
 Fastlane Kanban Manager
 ==========================================================================
 
-This project holds the codebase for the upcoming "Fastlane" Kanban Manager project
+This project holds the codebase for the upcoming "Fastlanes" Kanban Manager project
 
 This aim is to build a better "Trello", with more features and with a better pricing model.
 
