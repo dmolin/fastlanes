@@ -1,32 +1,29 @@
 @import 'vars';
 
-.navbar-wrapper {
-  position: fixed;
-  width:100%;
-  background: #fff;
-  z-index: 1000;
-}
-
+/*-----------------------
+ * HEADER
+ *----------------------*/
 .navbar {
-  height: 50px;
+  height: 40px;
+  background-color: #026aa7;
   display: flex;
   align-items: center;
+  color: #eee;
+  padding: 0 @pad-medium;
 }
-@media (max-width: @v-medium) {
-  .navbar {
-    text-align: center;
+
+.navbar-title {
+  font-size: 1.25rem;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+@media (min-width: @v-medium) {
+  .navbar-title {
+    justify-content: flex-start;
   }
 }
 
-.navbar-brand-logo {
-  vertical-align: bottom;
-  display: inline-block;
-  width: 203px;
-  height: 30px;
-  text-decoration: none;
-  background: url(/images/logo.png) left center no-repeat;
-  background-size: contain;
-}
 
 /*=======================
  * navigation
@@ -48,9 +45,20 @@
 }
 
 .navigation {
+  position: fixed;
+  width: 0;
+  left: 0;
+  top: 0;
   text-transform: uppercase;
   font-size: 1rem;
-}
+  }
+  @media (min-width: @v-medium) {
+    .navigation {
+      position: relative;
+      width: inherit;
+    }
+  }
+
 
 .navigation-item {
   padding-left: 10px;

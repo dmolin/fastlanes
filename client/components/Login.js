@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 class Login extends React.Component {
   constructor(props) {
@@ -11,18 +12,24 @@ class Login extends React.Component {
   }
 
   render() {
-    const {login} = this.props
+    const {login, route} = this.props
+    const path = route.path ? route.path.substr(1) : 'none'
+
     return (
       <div>
-        <h1>Login</h1>
+        <Navbar />
+        <div className={`main-container route-` + path}>
+          <div className="container container--unpadded">
+            <h1>Login into your Fastlanes account</h1>
 
-        <input placeholder="username" data-id="username" />
-        <br />
-        <input placeholder="password" type="password" data-id="password"/>
-        <br />
+            <input placeholder="username" data-id="username" />
+            <br />
+            <input placeholder="password" type="password" data-id="password"/>
+            <br />
 
-        <button onClick={this.handleLogin}>Login</button>
-
+            <button onClick={this.handleLogin}>Login</button>
+          </div>
+        </div>
       </div>
     )
   }

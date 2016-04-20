@@ -22,32 +22,12 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 h2 {
   font-size: 1.2rem;
   margin: .6em 0;
-}
-
-@media (min-width: @v-large) {
-  html, body {
-    font-size: 1.2em;
-    line-height:1.4em;
-  }
-  h1 {
-    font-size: 1.9rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-}
-
-.link {
-  color: @blue;
-  text-decoration: underline;
 }
 
 /* common resets */
@@ -72,6 +52,10 @@ a, a:visited {
   float: right;
 }
 
+.pull-left {
+  float: left;
+}
+
 .structural {
   height: 1px;
   width: 1px;
@@ -82,12 +66,15 @@ a, a:visited {
 
 .container {
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 @pad-medium;
 }
 @media (min-width: @v-large) {
   .container {
     max-width:1270px;
   }
+}
+.container--unpadded {
+  padding: 0;
 }
 
 .shaded {
@@ -98,14 +85,6 @@ a, a:visited {
   display: inline-block;
   //font-size: 24px;
   margin-bottom: 1em;
-}
-.section-title::before {
-  display: inline-block;
-  content: '';
-  background: url(/images/macbook.svg) center center;
-  width: 45px;
-  height: 26px;
-  margin-right: 5px;
 }
 
 .section {
