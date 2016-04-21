@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
+import {Link} from 'react-router'
 
 class Login extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Login extends React.Component {
     return (
       <div>
         <div className="container container--unpadded">
-          <div className="section login-box">
+          <section className="section central-box cf">
             <h1 className="section-header">Login into your Fastlanes account</h1>
 
             <form className="pure-form pure-form-stacked form form--wide">
@@ -34,7 +34,16 @@ class Login extends React.Component {
                 <button type="submit" className="pure-button button-success button-primary" onClick={this.handleLogin}>Login</button>
               </div>
             </form>
-          </div>
+          </section>
+
+          <section className="section central-box cf">
+            <h1 className="section-header">Not yet registered?</h1>
+
+            <div className="pure-form form-wide">
+              <Link to='/register' className="pure-button button-success button-primary liquid">Signpup here</Link>
+            </div>
+          </section>
+
         </div>
       </div>
     )

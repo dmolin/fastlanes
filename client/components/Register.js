@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router'
 
 class Register extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Register extends React.Component {
     return (
       <div>
         <div className="container container--unpadded">
-          <div className="section login-box">
+          <section className="section central-box cf">
             <h1 className="section-header">Register a new Fastlanes account</h1>
 
             <div className="pure-form pure-form-stacked form form--wide">
@@ -32,7 +33,15 @@ class Register extends React.Component {
                 <button className="pure-button button-success button-primary" onClick={this.handleRegistration}>Register</button>
               </div>
             </div>
-          </div>
+          </section>
+
+          <section className="section central-box cf">
+            <h1 className="section-header">Already registered?</h1>
+
+            <div className="pure-form form-wide">
+              <Link to='/login' className="pure-button button-success button-primary liquid">Login here</Link>
+            </div>
+          </section>
         </div>
       </div>
     )
