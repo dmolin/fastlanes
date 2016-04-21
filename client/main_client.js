@@ -16,7 +16,7 @@ window._store = store;
 Meteor.startup(() => {
   render(
     <Provider store={store}>
-      <Router history={browserHistory}>
+      <Router history={history}>
         {routes}
       </Router>
     </Provider>,

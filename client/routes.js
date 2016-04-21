@@ -8,14 +8,19 @@ import NotFound from './components/NotFound'
 export const routes = [{
   path: '/',
   component: MainLayout,
-  indexRoute: { component: Boards },
+  indexRoute: {
+    onEnter: authCheck,
+    component: Boards
+  },
   onEnter: authCheck,
   childRoutes: [{
     path: 'login',
-    component: Login
+    component: Login,
+    onEnter: authCheck
   }, {
     path: 'register',
-    component: Register
+    component: Register,
+    onEnter: authCheck
   }]
 }, {
   path:'*', component: NotFound

@@ -5,7 +5,7 @@ export default function signup(email, password) {
     Accounts.createUser({email:email, password:password}, (error) => {
       if(error) {
         console.log("signup failed", error)
-        swal('signup failed', "please check your data and try again", "error")
+        swal('signup failed', error.reason || "please check your data and try again", "error")
         //ideally I need to dispatch a FLASH_MESSAGE action with the error
         //that action will store the message in a flashMessage property in the store
         //then I'll build a component that display whatever message we've there (until dismissed)

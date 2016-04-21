@@ -8,33 +8,32 @@ class Login extends React.Component {
   }
 
   handleLogin(event) {
+    event.preventDefault();
     this.props.login($('[data-id=email]').val(), $('[data-id=password]').val())
   }
 
   render() {
     return (
       <div>
-        <div >
-          <div className="container container--unpadded">
-            <div className="section login-box">
-              <h1 className="section-header">Login into your Fastlanes account</h1>
+        <div className="container container--unpadded">
+          <div className="section login-box">
+            <h1 className="section-header">Login into your Fastlanes account</h1>
 
-              <div className="pure-form pure-form-stacked form form--wide">
-                <div className="form-field">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input className="" id="email" placeholder="enter your email" data-id="email" />
-                </div>
-
-                <div className="form-field">
-                  <label htmlFor="password" className="form-label">Password</label>
-                  <input className="" id="password" placeholder="enter your password" type="password" data-id="password"/>
-                </div>
-
-                <div className="pull-right">
-                  <button className="pure-button button-success button-primary" onClick={this.handleLogin}>Login</button>
-                </div>
+            <form className="pure-form pure-form-stacked form form--wide">
+              <div className="form-field">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input className="" id="email" placeholder="enter your email" data-id="email" />
               </div>
-            </div>
+
+              <div className="form-field">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input className="" id="password" placeholder="enter your password" type="password" data-id="password"/>
+              </div>
+
+              <div className="pull-right">
+                <button type="submit" className="pure-button button-success button-primary" onClick={this.handleLogin}>Login</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
