@@ -20,14 +20,25 @@ class Login extends React.Component {
         <Navbar />
         <div className={`main-container route-` + path}>
           <div className="container container--unpadded">
-            <h1>Login into your Fastlanes account</h1>
+            <div className="section login-box">
+              <h1 className="section-header">Login into your Fastlanes account</h1>
 
-            <input placeholder="username" data-id="username" />
-            <br />
-            <input placeholder="password" type="password" data-id="password"/>
-            <br />
+              <div className="pure-form pure-form-stacked form form--wide">
+                <div className="form-field">
+                  <label htmlFor="username" className="form-label">Email</label>
+                  <input className="" id="username" placeholder="username" data-id="username" />
+                </div>
 
-            <button onClick={this.handleLogin}>Login</button>
+                <div className="form-field">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input className="" id="password" placeholder="password" type="password" data-id="password"/>
+                </div>
+
+                <div className="pull-right">
+                  <button className="pure-button button-success button-primary" onClick={this.handleLogin}>Login</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

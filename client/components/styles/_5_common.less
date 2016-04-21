@@ -81,17 +81,12 @@ a, a:visited {
   background-color: @bgLight;
 }
 
-.section-title {
-  display: inline-block;
-  //font-size: 24px;
-  margin-bottom: 1em;
-}
-
 .section {
   padding: 2em 0;
 }
 .section-header {
   text-align:center;
+  margin-bottom: 1em;
 }
 
 .spinner {
@@ -128,4 +123,13 @@ a, a:visited {
 
 .copyright {
   text-align: center;
+}
+
+.form--wide {
+  input:not([type]),
+  input[type=text],
+  input[type=password],
+  textarea {
+    width: 100%;
+  }
 }
