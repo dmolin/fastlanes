@@ -12,13 +12,9 @@ class Login extends React.Component {
   }
 
   render() {
-    const {login, route} = this.props
-    const path = route.path ? route.path.substr(1) : 'none'
-
     return (
       <div>
-        <Navbar />
-        <div className={`main-container route-` + path}>
+        <div >
           <div className="container container--unpadded">
             <div className="section login-box">
               <h1 className="section-header">Login into your Fastlanes account</h1>

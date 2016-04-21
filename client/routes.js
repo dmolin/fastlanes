@@ -6,16 +6,17 @@ import Register from './containers/Register'
 import NotFound from './components/NotFound'
 
 export const routes = [{
-  component: MainLayout,
   path: '/',
+  component: MainLayout,
   indexRoute: { component: Boards },
-  onEnter: authCheck
-}, {
-  component: Login,
-  path: '/login'
-}, {
-  component: Register,
-  path: '/register'
+  onEnter: authCheck,
+  childRoutes: [{
+    path: 'login',
+    component: Login
+  }, {
+    path: 'register',
+    component: Register
+  }]
 }, {
   path:'*', component: NotFound
 }]
