@@ -8,7 +8,7 @@ class Login extends React.Component {
   }
 
   handleLogin(event) {
-    this.props.login($('[data-id=username]').val(), $('[data-id=password]').val())
+    this.props.login($('[data-id=email]').val(), $('[data-id=password]').val())
   }
 
   render() {
@@ -25,13 +25,13 @@ class Login extends React.Component {
 
               <div className="pure-form pure-form-stacked form form--wide">
                 <div className="form-field">
-                  <label htmlFor="username" className="form-label">Email</label>
-                  <input className="" id="username" placeholder="username" data-id="username" />
+                  <label htmlFor="email" className="form-label">Email</label>
+                  <input className="" id="email" placeholder="enter your email" data-id="email" />
                 </div>
 
                 <div className="form-field">
                   <label htmlFor="password" className="form-label">Password</label>
-                  <input className="" id="password" placeholder="password" type="password" data-id="password"/>
+                  <input className="" id="password" placeholder="enter your password" type="password" data-id="password"/>
                 </div>
 
                 <div className="pull-right">
