@@ -23,4 +23,4 @@ Some of the features:
 - Unit Testing with Enzyme, Mocha and Chai
 - mupx (Meteor Up) for production deployments
 
-
+![Screenshot](/assets/fastlanes.png?raw=true)
