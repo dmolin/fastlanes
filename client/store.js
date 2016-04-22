@@ -11,7 +11,13 @@ const enhancer = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
+let store; //singleton
+
 export default function configureStore(history, initialState) {
-  const store = createStore(reducers, initialState, enhancer );
+  store = createStore(reducers, initialState, enhancer );
   return store
-};
+}
+
+export function getStore() {
+  return store; 
+}

@@ -1,3 +1,7 @@
+import {getStore} from '../../store'
+import {browserHistory} from 'react-router'
+import loggedOut from '../loggedOut'
+
 export default function logout() {
   return (dispatch, getState) => {
     const state = getState()
@@ -10,3 +14,15 @@ export default function logout() {
     })
   }
 }
+
+Meteor.startup(() => {
+  Tracker.autorun(() => {
+    const store = getStore()
+    if(!Meteor.user() && store.getState().auth.loggedIn) {
+      //consider this block only if we were previously logged in
+      console.log("logged out")
+      store.dispatch(loggedOut())
+      browserHistory.push('/login')
+    }
+  })
+})
