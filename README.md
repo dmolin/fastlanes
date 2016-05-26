@@ -18,9 +18,10 @@ Some of the features:
 - MeteorJS 1.3
 - React 15.0
 - Redux
+- Redux Saga! (see [here](https://github.com/yelouafi/redux-saga))
 - React-Komposer, to integrate Meteor realtime reactivity within Redux (see [here](https://github.com/kadirahq/react-komposer))
 - BabelJS (ES2015 transpiler)
-- Unit Testing with Enzyme, Mocha and Chai
+- Unit Testing with Enzyme, Mocha and Chai (ok, when I start implementing it...)
 - mupx (Meteor Up) for production deployments
 
 ![Screenshot](/assets/fastlanes.png?raw=true)
