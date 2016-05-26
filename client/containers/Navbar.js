@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {composeWithTracker} from 'react-komposer'
 import Navbar from '../components/Navbar'
-import logout from '../actions/thunks/logout'
+import logout from '../actions/logout'
 
 export const onPropsChange = (props, onData) => {
   onData(null, {currentUser: Meteor.user()})

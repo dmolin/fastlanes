@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router'
+import LoginStates from '../constants/LoginStates'
 
 class Login extends React.Component {
   constructor(props) {
@@ -13,6 +14,9 @@ class Login extends React.Component {
   }
 
   render() {
+    let buttonState = this.props.loginState === LoginStates.LOGGING_IN ? {disabled:'disabled'} : {};
+    let buttonClass = `pure-button button-success button-primary ${this.props.loginState === LoginStates.LOGGING_IN ? 'button-loading' : ''}`;
+
     return (
       <div>
         <div className="container container--unpadded">
@@ -31,7 +35,7 @@ class Login extends React.Component {
               </div>
 
               <div className="pull-right">
-                <button type="submit" className="pure-button button-success button-primary" onClick={this.handleLogin}>Login</button>
+                <button type="submit" className={buttonClass} onClick={this.handleLogin} {...buttonState}>Login</button>
               </div>
             </form>
           </section>
@@ -40,7 +44,7 @@ class Login extends React.Component {
             <h1 className="section-header">Not yet registered?</h1>
 
             <div className="pure-form form-wide">
-              <Link to='/register' className="pure-button button-success button-primary liquid">Signpup here</Link>
+              <Link to='/register' className="pure-button button-success button-primary liquid">Signup here</Link>
             </div>
           </section>
 
