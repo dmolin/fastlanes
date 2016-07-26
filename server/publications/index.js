@@ -1,5 +1,6 @@
 //import projects from './projects';
+import boards from './boards'
 
 export default function () {
-  //projects()
+  boards()
 }

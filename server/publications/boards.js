@@ -1,4 +1,4 @@
-import {Boards} from '/lib/collections';
+import Boards from '/lib/collections/boards';
 
 export default function () {
   Meteor.publish('boards', function() {
