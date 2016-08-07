@@ -9,8 +9,8 @@ Some of the features:
 - Realtime Multiuser Kanban boards
 - Card dependencies ('waiting on', 'linked to' states for a card)
 - Card ID
-- Sprints and Milestones
-- Lane "snapshot" (useful to archive deployments and generate deployment reports)
+- Sub-boards: useful for creating things like Sprints and Milestones for a board
+- Lane "snapshot" (useful to archive "done" lanes/deployments and generate activity reports later)
 - Gamification (powerups, badges, user stats, leveling up, etc)
 
 ### Technologies Used ###
