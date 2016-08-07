@@ -5,30 +5,36 @@ import Login from './containers/Login'
 import Register from './containers/Register'
 import NotFound from './components/NotFound'
 
-function _protected(config) {
-  return Object.assign({ onEnter: authCheck }, config)
-}
-function _unprotected(config) {
-  return Object.assign({ onEnter: authCheck }, config)
+function _augment(configArray) {
+  function addOnEnter(entry) {
+    return Object.assign({ onEnter: authCheck.bind(entry.onEnter) }, entry);
+  }
+  function addAuthCheck(entry) {
+    if (entry.childRoutes && entry.childRoutes.length) {
+      entry.childRoutes = entry.childRoutes.map(addAuthCheck)
+    }
+    return addOnEnter(entry);
+  }
+  return configArray.map(addAuthCheck);
 }
 
-export const routes = [{
+export const routes = _augment([{
   path: '/',
   component: MainLayout,
-  indexRoute: _protected({
+  indexRoute: {
     component: Boards
-  }),
-  onEnter: authCheck,
+  },
   childRoutes: [
-    _unprotected({
+    {
       path: 'login',
       component: Login
-    }),
-    _unprotected({
+    },
+    {
       path: 'register',
       component: Register
-    })
+    }
   ]
 }, {
   path:'*', component: NotFound
-}]
+}])
+
