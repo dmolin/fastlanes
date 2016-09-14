@@ -10,6 +10,6 @@ const Boards = (props) => (
       ))
     }
   </section>
-)
+);
 
 export default Boards
