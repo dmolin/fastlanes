@@ -37,10 +37,19 @@ export default function* loginWatcher() {
 Meteor.startup(() => {
   Tracker.autorun(() => {
     const store = getStore()
+    let shouldRedirect = false
+
     if(Meteor.user() && !store.getState().auth.loggedIn) {
       console.log("logged in (detected)")
+      //if we're in the login state, change url to the main dashboard page
+      if (store.getState().auth.loginState === 'LOGGING_IN') {
+        shouldRedirect = true;
+      }
       store.dispatch(loggedIn(Meteor.user()))
-      browserHistory.push('/')
+      
+      if (shouldRedirect) {
+        browserHistory.push('/')
+      }
     }
   })
 })

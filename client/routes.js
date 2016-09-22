@@ -4,6 +4,7 @@ import authCheck from './middlewares/requireAuth'
 import Login from './containers/Login'
 import Register from './containers/Register'
 import NotFound from './components/NotFound'
+import BoardPage from './pages/BoardPage'
 
 function _augment(configArray) {
   function addOnEnter(entry) {
@@ -32,6 +33,10 @@ export const routes = _augment([{
     {
       path: 'register',
       component: Register
+    },
+    {
+      path: 'board/:id',
+      component: BoardPage
     }
   ]
 }, {

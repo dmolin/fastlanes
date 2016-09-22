@@ -1,11 +1,11 @@
 import React from 'react'
+import Board from '../containers/Board'
 
 const Boards = (props) => (
   <section className="boards">
     {props.boards.map((board, index) => (
         <div className="board" key={index}>
-          <p>{board.name}</p>
-          <p>{board.description}</p>
+          <Board {...board} />
         </div>
       ))
     }

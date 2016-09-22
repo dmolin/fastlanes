@@ -5,6 +5,7 @@ export default (nextState, replace) => {
         pathname: '/'
       })
     }
+    // Chain with previous onEnter hook if present
     if (this && typeof this === 'function') {
       return this(nextState, replace);
     }
@@ -17,6 +18,8 @@ export default (nextState, replace) => {
     })
     return;
   }
+
+  // Chain with previous onEnter hook if present
   if (this && typeof this === 'function') {
     return this(nextState, replace);
   }
