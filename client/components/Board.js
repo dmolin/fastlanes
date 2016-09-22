@@ -8,7 +8,6 @@ class Board extends React.Component {
   }
 
   onBoardSelection() {
-    //this.props.selectBoard(this.props._id);
     browserHistory.push(`/board/${this.props._id}`)
     return false
   }

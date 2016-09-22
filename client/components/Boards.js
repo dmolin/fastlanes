@@ -1,5 +1,5 @@
 import React from 'react'
-import Board from '../containers/Board'
+import Board from '../components/Board'
 
 const Boards = (props) => (
   <section className="boards">
