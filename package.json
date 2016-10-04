@@ -26,6 +26,7 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "domready": "^1.0.8",
     "meteor-node-stubs": "^0.2.3",
     "mobx": "^2.3.5",

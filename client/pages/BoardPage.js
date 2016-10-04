@@ -3,23 +3,25 @@ import BoardDetail from '../containers/BoardDetail'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import selectBoard from '../actions/selectBoard'
+import deselectBoard from '../actions/deselectBoard'
 
 class BoardPage extends React.Component {
   componentDidMount() {
+    //Dispatch a selectBoard action. this will render the boardId into the redux state tree
+    //also, we turn the param bound value into a simple prop for the BoardDetail container
     this.props.selectBoard(this.props.params.id);
   }
 
-  renderBoardDetailWhenReady() {
-    return (this.props.id ? <BoardDetail id={this.props.id} /> : null)
+  componentWillUnmount() {
+    this.props.deselectBoard(this.props.params.id)
   }
 
   render() {
-    //turn the param bound value into a simple prop for the BoardDetail container
-    return (
-      <div className='board-detail'>
-        {this.renderBoardDetailWhenReady()}
+    return (this.props.id ? 
+      <div className='board-detail-page'>
+        <BoardDetail id={this.props.id} />
       </div>
-    )
+      : null)
   }
 }
 
@@ -31,7 +33,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    selectBoard
+    selectBoard,
+    deselectBoard
   }, dispatch)
 }
 
