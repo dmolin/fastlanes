@@ -13,6 +13,7 @@ export default function* logoutWatcher() {
     console.log("Logging out user")
     try {
       var result = yield call(Meteor.logout)
+      console.log("user logged out");
     } catch(error) {
       /*
        * this must be changed for a purer approach: just dispatch the POPUP_MESSAGE_SHOW event with

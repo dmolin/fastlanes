@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../containers/Navbar'
+import NavigationMenu from './NavigationMenu'
 
 const Layout = (props) => {
   const {route} = props
@@ -9,6 +10,7 @@ const Layout = (props) => {
     <div className={`main-wrapper route` + path}>
       <Navbar />
       <div className="main-container">
+        <NavigationMenu />
         {props.children}
       </div>
     </div>

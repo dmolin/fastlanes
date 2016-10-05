@@ -27,18 +27,16 @@ export const routes = _augment([{
   },
   childRoutes: [
     {
-      path: 'login',
-      component: Login
-    },
-    {
-      path: 'register',
-      component: Register
-    },
-    {
       path: 'board/:id',
       component: BoardPage
     }
   ]
+}, {
+  path: '/login',
+  component: Login
+}, {
+  path: '/register',
+  component: Register
 }, {
   path:'*', component: NotFound
 }])
