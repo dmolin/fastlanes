@@ -19,15 +19,24 @@ function _augment(configArray) {
   return configArray.map(addAuthCheck);
 }
 
-export const routes = _augment([{
-  path: '/',
+function redirect (from, to) {
+  return {
+    path: from,
+    onEnter: (nextState, transition) => {
+      transition(to)
+    }
+  }
+}
+
+export const routes = [redirect("/", "/boards")].concat(_augment([{
+  path: '/boards',
   component: MainLayout,
   indexRoute: {
     component: Boards
   },
   childRoutes: [
     {
-      path: 'board/:id',
+      path: ':id',
       component: BoardPage
     }
   ]
@@ -39,5 +48,5 @@ export const routes = _augment([{
   component: Register
 }, {
   path:'*', component: NotFound
-}])
+}]))
 

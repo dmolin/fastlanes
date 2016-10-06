@@ -1,0 +1,14 @@
+BOARDS
+
+A Board can be created in a very simple and straightforward way: just input the name and press return!
+The checkbox "Create Project/Team" is selected by default and will create:
+ - a project with the name of the board + " Project"
+ - a team with the name of the board + " Team". you'll be the only member of the team and the team will be associated to the Project
+
+The default state for option to auto-create team/project can be set in the user preferences panel (so advanced users will not have to remember to uncheck the option every time they create a new board)
+
+When creating a new Board you can choose between a few predetermined templates (Todo List/Kanban Board etc..). 
+
+In the board page you'll also have the opportunity to add the "CURRENT" state of the board as a template for future cloning (you'll be prompted to give it a name).You'll also be able to choose an existing template to update (maybe a screenshot will be taken for the detail panel for the template!)
+
+
